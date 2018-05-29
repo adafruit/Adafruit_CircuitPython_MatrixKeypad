@@ -32,30 +32,26 @@ Implementation Notes
 
 **Hardware:**
 
-.. todo:: Add links to any specific hardware product page(s), or category page(s). Use unordered list & hyperlink rST
-   inline format: "* `Link Text <url>`_"
+* Flexible 3x4 Matrix Keypad <https://www.adafruit.com/product/419>
+* Phone-style 3x4 Matrix Keypad <https://www.adafruit.com/product/1824>
 
 **Software and Dependencies:**
 
 * Adafruit CircuitPython firmware for the supported boards:
   https://github.com/adafruit/circuitpython/releases
-  
-.. todo:: Uncomment or remove the Bus Device and/or the Register library dependencies based on the library's use of either.
-
-# * Adafruit's Bus Device library: https://github.com/adafruit/Adafruit_CircuitPython_BusDevice
-# * Adafruit's Register library: https://github.com/adafruit/Adafruit_CircuitPython_Register
 """
 
 # imports
-import time
-from digitalio import DigitalInOut, Direction, Pull
-from micropython import const
-
+from digitalio import Direction, Pull
 
 __version__ = "0.0.0-auto.0"
 __repo__ = "https://github.com/adafruit/Adafruit_CircuitPython_MatrixKeypad.git"
 
 class Matrix_Keypad(object):
+    """Driver for passive matrix keypads (any size)
+       :param list row_pins: a list of DigitalInOut objects corresponding to the rows
+       :param list col_pins: a list of DigitalInOut objects corresponding to the colums
+       :param list keys: a list of lists that has the corresponding symbols for each key"""
     def __init__(self, row_pins, col_pins, keys):
         if len(keys) != len(row_pins):
             raise RuntimeError("Key name matrix doesn't match # of colums")
@@ -68,10 +64,11 @@ class Matrix_Keypad(object):
 
     @property
     def pressed_keys(self):
-
+        """An array containing all detected 'keys' that are pressed from the initalized
+        list-of-lists passed in during creation"""
         # make a list of all the keys that are detected
         pressed = []
-        
+
         # set all pins pins to be inputs w/pullups
         for pin in self.row_pins+self.col_pins:
             pin.direction = Direction.INPUT

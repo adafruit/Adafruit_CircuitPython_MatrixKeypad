@@ -1,7 +1,7 @@
-import adafruit_matrixkeypad
-from digitalio import DigitalInOut, Direction, Pull
-import board
 import time
+import adafruit_matrixkeypad
+from digitalio import DigitalInOut
+import board
 
 # Classic 3x4 matrix keypad
 cols = [DigitalInOut(x) for x in (board.D2, board.D0, board.D4)]
@@ -10,7 +10,7 @@ keys = ((1, 2, 3),
         (4, 5, 6),
         (7, 8, 9),
         ('*', 0, '#'))
-        
+
 keypad = adafruit_matrixkeypad.Matrix_Keypad(rows, cols, keys)
 
 while True:
