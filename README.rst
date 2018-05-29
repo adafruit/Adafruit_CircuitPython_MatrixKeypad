@@ -28,7 +28,27 @@ This is easily achieved by downloading
 Usage Example
 =============
 
-.. todo:: Add a quick, simple example. It and other examples should live in the examples folder and be included in docs/examples.rst.
+```
+import adafruit_matrixkeypad
+from digitalio import DigitalInOut
+import board
+
+# Classic 3x4 matrix keypad
+cols = [DigitalInOut(x) for x in (board.D2, board.D0, board.D4)]
+rows = [DigitalInOut(x) for x in (board.D1, board.D6, board.D5, board.D3)]
+keys = ((1, 2, 3),
+        (4, 5, 6),
+        (7, 8, 9),
+        ('*', 0, '#'))
+
+keypad = adafruit_matrixkeypad.Matrix_Keypad(rows, cols, keys)
+
+while True:
+    keys = keypad.pressed_keys
+    if keys:
+        print("Pressed: ", keys)
+    time.sleep(0.1)
+```
 
 Contributing
 ============
