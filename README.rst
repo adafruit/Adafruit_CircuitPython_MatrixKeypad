@@ -13,15 +13,13 @@ Introduction
     :target: https://travis-ci.org/adafruit/adafruit_CircuitPython_MatrixKeypad
     :alt: Build Status
 
-.. todo:: Describe what the library does.
+This simple helper library lets you create objects that will scan and detect keypresses on passive matrix keypads
 
 Dependencies
 =============
 This driver depends on:
 
 * `Adafruit CircuitPython <https://github.com/adafruit/circuitpython>`_
-* `Bus Device <https://github.com/adafruit/Adafruit_CircuitPython_BusDevice>`_
-* `Register <https://github.com/adafruit/Adafruit_CircuitPython_Register>`_
 
 Please ensure all dependencies are available on the CircuitPython filesystem.
 This is easily achieved by downloading
