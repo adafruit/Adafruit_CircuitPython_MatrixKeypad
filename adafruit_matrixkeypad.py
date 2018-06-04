@@ -20,7 +20,7 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE.
 """
-`adafruit_MatrixKeypad`
+`adafruit_matrixkeypad`
 ====================================================
 
 CircuitPython library for matrix keypads
