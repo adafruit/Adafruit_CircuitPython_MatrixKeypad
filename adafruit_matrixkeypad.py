@@ -23,7 +23,7 @@
 `adafruit_MatrixKeypad`
 ====================================================
 
-.. todo:: Describe what the module does
+CircuitPython library for matrix keypads
 
 * Author(s): ladyada
 
