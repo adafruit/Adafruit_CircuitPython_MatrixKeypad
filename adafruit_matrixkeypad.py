@@ -48,11 +48,12 @@ __version__ = "0.0.0-auto.0"
 __repo__ = "https://github.com/adafruit/Adafruit_CircuitPython_MatrixKeypad.git"
 
 class Matrix_Keypad(object):
-    """Driver for passive matrix keypads (any size)
+    """Driver for passive matrix keypads - any size"""
+    def __init__(self, row_pins, col_pins, keys):
+    """Initialise the driver with the correct size and key list.
        :param list row_pins: a list of DigitalInOut objects corresponding to the rows
        :param list col_pins: a list of DigitalInOut objects corresponding to the colums
        :param list keys: a list of lists that has the corresponding symbols for each key"""
-    def __init__(self, row_pins, col_pins, keys):
         if len(keys) != len(row_pins):
             raise RuntimeError("Key name matrix doesn't match # of colums")
         for row in keys:
@@ -64,7 +65,7 @@ class Matrix_Keypad(object):
 
     @property
     def pressed_keys(self):
-        """An array containing all detected 'keys' that are pressed from the initalized
+        """An array containing all detected keys that are pressed from the initalized
         list-of-lists passed in during creation"""
         # make a list of all the keys that are detected
         pressed = []
