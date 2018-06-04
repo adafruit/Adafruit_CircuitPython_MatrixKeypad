@@ -51,7 +51,7 @@ class Matrix_Keypad(object):
     """Driver for passive matrix keypads - any size"""
     def __init__(self, row_pins, col_pins, keys):
         """Initialise the driver with the correct size and key list.
-        
+
         :param list row_pins: a list of DigitalInOut objects corresponding to the rows
         :param list col_pins: a list of DigitalInOut objects corresponding to the colums
         :param list keys: a list of lists that has the corresponding symbols for each key
