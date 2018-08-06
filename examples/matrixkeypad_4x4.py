@@ -1,7 +1,7 @@
 import time
-import adafruit_matrixkeypad
 from digitalio import DigitalInOut
 import board
+import adafruit_matrixkeypad
 
 # Extended 4x4 matrix keypad
 cols = [DigitalInOut(x) for x in (board.D0, board.D1, board.D2, board.D3)]
