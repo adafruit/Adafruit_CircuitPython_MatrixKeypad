@@ -1,11 +1,11 @@
 import time
-from digitalio import DigitalInOut
+import digitalio
 import board
 import adafruit_matrixkeypad
 
 # Classic 3x4 matrix keypad
-cols = [DigitalInOut(x) for x in (board.D2, board.D0, board.D4)]
-rows = [DigitalInOut(x) for x in (board.D1, board.D6, board.D5, board.D3)]
+cols = [digitalio.DigitalInOut(x) for x in (board.D9, board.D6, board.D5)]
+rows = [digitalio.DigitalInOut(x) for x in (board.D13, board.D12, board.D11, board.D10)]
 keys = ((1, 2, 3),
         (4, 5, 6),
         (7, 8, 9),
