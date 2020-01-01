@@ -9,8 +9,8 @@ Introduction
     :target: https://discord.gg/nBQh6qu
     :alt: Discord
 
-.. image:: https://travis-ci.com/adafruit/Adafruit_CircuitPython_MatrixKeypad.svg?branch=master
-    :target: https://travis-ci.com/adafruit/Adafruit_CircuitPython_MatrixKeypad
+.. image:: https://github.com/adafruit/Adafruit_CircuitPython_MatrixKeypad/workflows/Build%20CI/badge.svg
+    :target: https://github.com/adafruit/Adafruit_CircuitPython_MatrixKeypad/actions/
     :alt: Build Status
 
 This simple helper library lets you create objects that will scan and detect keypresses on passive matrix keypads
