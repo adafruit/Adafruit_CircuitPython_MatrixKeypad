@@ -47,8 +47,10 @@ from digitalio import Direction, Pull
 __version__ = "0.0.0-auto.0"
 __repo__ = "https://github.com/adafruit/Adafruit_CircuitPython_MatrixKeypad.git"
 
-class Matrix_Keypad(object):
+
+class Matrix_Keypad:
     """Driver for passive matrix keypads - any size"""
+
     def __init__(self, row_pins, col_pins, keys):
         """Initialise the driver with the correct size and key list.
 
@@ -73,7 +75,7 @@ class Matrix_Keypad(object):
         pressed = []
 
         # set all pins pins to be inputs w/pullups
-        for pin in self.row_pins+self.col_pins:
+        for pin in self.row_pins + self.col_pins:
             pin.direction = Direction.INPUT
             pin.pull = Pull.UP
 
