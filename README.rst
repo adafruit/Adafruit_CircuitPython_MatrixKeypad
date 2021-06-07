@@ -80,7 +80,7 @@ Contributing
 ============
 
 Contributions are welcome! Please read our `Code of Conduct
-<https://github.com/adafruit/adafruit_CircuitPython_MatrixKeypad/blob/master/CODE_OF_CONDUCT.md>`_
+<https://github.com/adafruit/adafruit_CircuitPython_MatrixKeypad/blob/main/CODE_OF_CONDUCT.md>`_
 before contributing to help this project stay welcoming.
 
 Documentation
