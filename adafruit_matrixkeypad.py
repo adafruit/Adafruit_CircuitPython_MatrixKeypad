@@ -62,17 +62,15 @@ class Matrix_Keypad:
             pin.direction = Direction.INPUT
             pin.pull = Pull.UP
 
-        for row in range(  # pylint: disable=consider-using-enumerate
-            len(self.row_pins)
-        ):
+        for row, row_pin in enumerate(self.row_pins):
             # set one row low at a time
-            self.row_pins[row].direction = Direction.OUTPUT
-            self.row_pins[row].value = False
+            row_pin.direction = Direction.OUTPUT
+            row_pin.value = False
             # check the column pins, which ones are pulled down
             for col, val in enumerate(self.col_pins):
                 if not val.value:
                     pressed.append(self.keys[row][col])
             # reset the pin to be an input
-            self.row_pins[row].direction = Direction.INPUT
-            self.row_pins[row].pull = Pull.UP
+            row_pin.direction = Direction.INPUT
+            row_pin.pull = Pull.UP
         return pressed
