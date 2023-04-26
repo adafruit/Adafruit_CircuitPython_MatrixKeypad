@@ -27,6 +27,13 @@ Implementation Notes
 # imports
 from digitalio import Direction, Pull
 
+# Since the board may or may not have access to the typing library we need
+# to have this in a try/except to enable type
+try:
+    from typing import List
+except ImportError:
+    pass
+
 __version__ = "0.0.0+auto.0"
 __repo__ = "https://github.com/adafruit/Adafruit_CircuitPython_MatrixKeypad.git"
 
@@ -34,8 +41,9 @@ __repo__ = "https://github.com/adafruit/Adafruit_CircuitPython_MatrixKeypad.git"
 class Matrix_Keypad:
     """Driver for passive matrix keypads - any size"""
 
-    def __init__(self, row_pins, col_pins, keys):
-        """Initialise the driver with the correct size and key list.
+    def __init__(self, row_pins: List = [], col_pins: List = [], keys:List = []):
+        """
+        Initialise the driver with the correct size and key list.
 
         :param list row_pins: a list of DigitalInOut objects corresponding to the rows
         :param list col_pins: a list of DigitalInOut objects corresponding to the colums
@@ -51,9 +59,13 @@ class Matrix_Keypad:
         self.keys = keys
 
     @property
-    def pressed_keys(self):
-        """An array containing all detected keys that are pressed from the initalized
-        list-of-lists passed in during creation"""
+    def pressed_keys(self) -> List:
+        """
+        An array containing all detected keys that are pressed from the initalized
+        list-of-lists passed in during creation
+
+        :return: a list of keys that are pressed
+        """
         # make a list of all the keys that are detected
         pressed = []
 
