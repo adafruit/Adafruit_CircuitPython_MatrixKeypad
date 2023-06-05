@@ -31,6 +31,7 @@ from digitalio import Direction, Pull
 # to have this in a try/except to enable type
 try:
     from typing import List
+    from digitalio import DigitalInOut
 except ImportError:
     pass
 
@@ -41,7 +42,12 @@ __repo__ = "https://github.com/adafruit/Adafruit_CircuitPython_MatrixKeypad.git"
 class Matrix_Keypad:
     """Driver for passive matrix keypads - any size"""
 
-    def __init__(self, row_pins: List = [], col_pins: List = [], keys:List = []):
+    def __init__(
+        self,
+        row_pins: List[DigitalInOut],
+        col_pins: List[DigitalInOut],
+        keys: List[List],
+    ) -> None:
         """
         Initialise the driver with the correct size and key list.
 
