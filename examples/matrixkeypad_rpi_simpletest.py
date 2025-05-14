@@ -2,8 +2,10 @@
 # SPDX-License-Identifier: MIT
 
 import time
-import digitalio
+
 import board
+import digitalio
+
 import adafruit_matrixkeypad
 
 # Membrane 3x4 matrix keypad on Raspberry Pi -
