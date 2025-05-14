@@ -31,6 +31,7 @@ from digitalio import Direction, Pull
 # to have this in a try/except to enable type
 try:
     from typing import List
+
     from digitalio import DigitalInOut
 except ImportError:
     pass

@@ -2,8 +2,10 @@
 # SPDX-License-Identifier: MIT
 
 import time
-from digitalio import DigitalInOut
+
 import board
+from digitalio import DigitalInOut
+
 import adafruit_matrixkeypad
 
 # Extended 4x4 matrix keypad
